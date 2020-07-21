@@ -1,5 +1,8 @@
 from datetime import datetime
+import smtplib
+from email.message import EmailMesaage
 file = open("Records.txt", "a")
+
 
 print("Welcome to CHA")
 print("plese provide your information down below.")
@@ -126,11 +129,26 @@ while True:
                print("quarantine yourself at home and perform social distancing procedures for 2-14 days and if the symptoms worsen then head to the nearest covid-19 test center.")
                file.write("the user has been advised to: quarantine yourself at home and perform social distancing procedures for 2-14 days and if the symptoms worsen then head to the nearest covid-19 test center.")
 
-
+        s = smtplib.SMTP('localhost')
+        msg = EmailMessage()
+        msg.set_content(file.read())
+        msg['Subject'] = ['this is you record']
+        msg['From'] = momen.motaz@gmail.com
+        msg['To'] = momen.motaz@gmail.com
+        s.send_message(msg)
+        s.quit()
 
            break
 
 
 file.write("\n\n")
 file.close()
+
+
+
+
+
+
+
+
 
