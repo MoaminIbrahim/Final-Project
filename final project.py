@@ -10,7 +10,7 @@ print("plese provide your information down below.")
 name = input("what is your name? ")
 age = input("How old are you? ")
 email = input("What is your email? ")
-file.write("This is The User's Information:\nName: " +name+ "\n""Age: " +age+ " Years old\n""Email: "+email+ "\n" )
+
 
 
 major_symptoms = []
@@ -38,6 +38,7 @@ minor_symptoms_10_n = "nausea or vomittig or diarrhea"
 
 
 while True:
+   file.write("This is The User's Information:\nName: " +name+ "\n""Age: " +age+ " Years old\n""Email: "+email+ "\n" )
    contact = input("have you recently made contact with an infected individual? (kindly answer in (yes,no) format\n ")
    if contact == 'yes':
 
@@ -309,12 +310,3 @@ s.send_message(msg)
 s.quit()
 file.write("\n\n")
 file.close()
-
-
-
-
-
-
-
-
-
